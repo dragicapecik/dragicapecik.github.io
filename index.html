@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragica Pecik</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Sans 3',sans-serif;font-weight:300;color:#333;line-height:1.6;}
+
+nav{
+  background:#1c1c2e;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  border-bottom:3px solid #e94560;
+}
+.nav-inner{
+  max-width:960px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 24px;height:56px;
+}
+.nav-brand{color:#fff;font-size:18px;font-weight:700;letter-spacing:0.04em;text-decoration:none;}
+.nav-links{display:flex;gap:4px;align-items:center;}
+.nav-links a{
+  color:#ccc;font-size:13px;font-weight:400;text-decoration:none;
+  padding:6px 13px;border-radius:3px;transition:all 0.2s;letter-spacing:0.03em;
+}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.nav-links a.cv-btn{color:#e94560;border:1px solid #e94560;margin-left:8px;}
+.nav-links a.cv-btn:hover{background:#e94560;color:#fff;}
+
+.hero{
+  background:#1c1c2e;
+  padding:118px 24px 72px;
+  text-align:center;
+}
+.hero-inner{max-width:680px;margin:0 auto;}
+.hero h1{font-size:52px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:10px;}
+.hero h2{font-size:20px;font-weight:300;color:#a0a0c0;margin-bottom:20px;letter-spacing:0.02em;}
+.hero p{font-size:16px;color:#8888a8;max-width:520px;margin:0 auto 32px;line-height:1.7;}
+.hero-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  background:#e94560;color:#fff;padding:12px 28px;
+  border-radius:3px;font-size:14px;font-weight:600;text-decoration:none;
+  transition:background 0.2s,transform 0.15s;letter-spacing:0.03em;
+}
+.btn-primary:hover{background:#c73350;transform:translateY(-1px);}
+.btn-outline{
+  border:1px solid #444;color:#ccc;padding:12px 28px;
+  border-radius:3px;font-size:14px;font-weight:400;text-decoration:none;
+  transition:all 0.2s;
+}
+.btn-outline:hover{border-color:#aaa;color:#fff;}
+
+section{padding:72px 24px;}
+.section-inner{max-width:960px;margin:0 auto;}
+section:nth-child(odd){background:#f8f8fb;}
+section:nth-child(even){background:#fff;}
+
+h3.sec-title{
+  font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:#e94560;margin-bottom:32px;padding-bottom:10px;
+  border-bottom:1px solid #eee;
+}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.about-text p{font-size:15px;color:#555;line-height:1.75;margin-bottom:14px;}
+.skills-rows{}
+.skill-row{
+  display:flex;gap:12px;padding:9px 0;
+  border-bottom:1px solid #eee;font-size:14px;
+}
+.skill-row:first-child{border-top:1px solid #eee;}
+.skill-label{font-weight:600;min-width:110px;color:#333;font-size:13px;}
+.skill-val{color:#666;font-weight:300;}
+
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{
+  display:grid;grid-template-columns:170px 1fr;gap:32px;
+  padding:28px 0;border-bottom:1px solid #eee;
+}
+.exp-item:first-child{border-top:1px solid #eee;}
+.exp-meta{}
+.exp-date{font-size:12px;color:#999;letter-spacing:0.02em;line-height:1.5;}
+.exp-co{font-size:13px;font-weight:600;color:#444;margin-top:3px;}
+.exp-right h4{font-size:17px;font-weight:600;color:#1c1c2e;margin-bottom:2px;}
+.exp-sub{font-size:13px;color:#e94560;font-style:italic;margin-bottom:10px;}
+.exp-bullets{list-style:none;}
+.exp-bullets li{
+  font-size:14px;color:#555;font-weight:300;
+  padding:2px 0 2px 14px;position:relative;line-height:1.55;
+}
+.exp-bullets li::before{content:"–";position:absolute;left:0;color:#bbb;}
+
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.proj-card{
+  border:1px solid #e8e8f0;border-radius:4px;padding:28px;
+  background:#fff;transition:border-color 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.proj-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:#e94560;transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s;
+}
+.proj-card:hover{border-color:#e94560;box-shadow:0 4px 20px rgba(233,69,96,0.08);}
+.proj-card:hover::after{transform:scaleX(1);}
+.proj-name{font-size:18px;font-weight:700;color:#1c1c2e;margin-bottom:5px;}
+.proj-stack{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#e94560;margin-bottom:14px;}
+.proj-desc{font-size:14px;color:#666;font-weight:300;line-height:1.6;}
+
+.contact-box{
+  background:#1c1c2e;border-radius:4px;padding:52px;text-align:center;
+}
+.contact-box h2{font-size:32px;font-weight:700;color:#fff;margin-bottom:10px;}
+.contact-box p{font-size:15px;color:#8888a8;max-width:420px;margin:0 auto 28px;font-weight:300;}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.contact-links a{
+  padding:11px 22px;border-radius:3px;font-size:14px;text-decoration:none;
+  transition:all 0.2s;font-weight:400;
+}
+.contact-links a.primary{background:#e94560;color:#fff;}
+.contact-links a.primary:hover{background:#c73350;}
+.contact-links a.secondary{border:1px solid #444;color:#ccc;}
+.contact-links a.secondary:hover{border-color:#aaa;color:#fff;}
+
+footer{
+  background:#12121f;padding:22px 24px;text-align:center;
+}
+footer p{font-size:12px;color:#555;}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s,transform 0.5s;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:680px){
+  .nav-links a:not(.cv-btn){display:none;}
+  .hero h1{font-size:36px;}
+  .about-grid,.exp-item,.proj-grid{grid-template-columns:1fr;}
+  .exp-item{gap:6px;}
+  .contact-box{padding:36px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Dragica Pecik</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="cv-btn">↓ Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Dragica Pecik</h1>
+    <h2>software engineer · Zagreb</h2>
+    <p>Full-stack developer with a decade of experience in the .NET ecosystem. I build business applications that are maintainable, reliable, and actually work.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View projects</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-inner">
+    <h3 class="sec-title">About me</h3>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a software engineer at InfoDom in Zagreb, where I lead development of .NET/AngularJS web applications and own our Azure DevOps CI/CD pipelines. I care about the space between clean code and real user value.</p>
+        <p>Outside of work I build tools that solve problems I see in my professional environment — mostly around company formation, M&A workflows, and developer tooling.</p>
+        <p>M.Sc. in Electronics and Computer Engineering from FESB, Split.</p>
+      </div>
+      <div class="skills-rows reveal">
+        <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-val">C#, SQL, Python, TypeScript</span></div>
+        <div class="skill-row"><span class="skill-label">Frameworks</span><span class="skill-val">.NET 8, Blazor Server, AngularJS, Angular, EF</span></div>
+        <div class="skill-row"><span class="skill-label">Cloud</span><span class="skill-val">Microsoft Azure, Azure DevOps</span></div>
+        <div class="skill-row"><span class="skill-label">Tools</span><span class="skill-val">Git, Visual Studio, ReSharper, Polly v8</span></div>
+        <div class="skill-row"><span class="skill-label">Certs</span><span class="skill-val">MCSD App Builder · MCSA Web Apps · PCEP</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <h3 class="sec-title">Work experience</h3>
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-date">Jul 2019 – present</div>
+          <div class="exp-co">InfoDom Ltd.</div>
+        </div>
+        <div class="exp-right">
+          <h4>Software Engineer</h4>
+          <div class="exp-sub">Zagreb</div>
+          <ul class="exp-bullets">
+            <li>Lead development of a production .NET / AngularJS web application serving core business workflows</li>
+            <li>Own Azure DevOps CI/CD pipelines — improved release reliability and cut deployment cycle time</li>
+            <li>Write technical documentation; coordinate cross-team task planning and QA reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-date">Jun 2018 – May 2019</div>
+          <div class="exp-co">KING ICT</div>
+        </div>
+        <div class="exp-right">
+          <h4>Software Engineer</h4>
+          <div class="exp-sub">Zagreb</div>
+          <ul class="exp-bullets">
+            <li>Migrated 30+ legacy projects from TFS to Git, refactoring namespaces with ReSharper across the full solution</li>
+            <li>Updated SQL Server scripts and SSRS report queries to meet evolving business reporting requirements</li>
+            <li>Reconfigured all test deployments to a new environment with dynamic connectivity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-date">Sep 2015 – Jun 2018</div>
+          <div class="exp-co">Proteron Consulting</div>
+        </div>
+        <div class="exp-right">
+          <h4>Software Engineer</h4>
+          <div class="exp-sub">Zagreb</div>
+          <ul class="exp-bullets">
+            <li>Built and deployed .NET Azure web applications using Entity Framework, AngularJS, and Angular 4</li>
+            <li>Managed deployments and led client communications to ensure on-time, on-spec delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-date">May – Jul 2015</div>
+          <div class="exp-co">Siemens</div>
+        </div>
+        <div class="exp-right">
+          <h4>Software Engineering Intern</h4>
+          <div class="exp-sub">Split</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-inner">
+    <h3 class="sec-title">Projects</h3>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-name">IFUNDR</div>
+        <div class="proj-stack">.NET 8 · Blazor Server</div>
+        <p class="proj-desc">Company formation wizard with multi-jurisdiction support and a guided onboarding flow. Free tool aimed at startup founders in the CEE region.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-name">URLShortener / LSM Engine</div>
+        <div class="proj-stack">.NET 8 · Svelte</div>
+        <p class="proj-desc">URL shortening service with a hand-built LSM storage engine: WAL, MemTable, SSTables, compaction, global Bloom filter, and LRU cache. Base62 encoding.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-box reveal">
+      <h2>Let's connect.</h2>
+      <p>Open to conversations about interesting projects, collaborations, or just a good tech chat.</p>
+      <div class="contact-links">
+        <a href="mailto:dragicapecik@gmail.com" class="primary">dragicapecik@gmail.com</a>
+        <a href="https://linkedin.com/in/dragicapecik" target="_blank" class="secondary">LinkedIn →</a>
+        <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="secondary">↓ Resume PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dragica Pecik · Zagreb · <span id="yr"></span></p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
