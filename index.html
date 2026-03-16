@@ -108,7 +108,12 @@ h3.sec-title{
 .proj-name{font-size:18px;font-weight:700;color:#1c1c2e;margin-bottom:5px;}
 .proj-stack{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#e94560;margin-bottom:14px;}
 .proj-desc{font-size:14px;color:#666;font-weight:300;line-height:1.6;}
-
+.proj-link{
+  display:inline-block;margin-top:16px;font-size:13px;font-weight:600;
+  color:#e94560;text-decoration:none;letter-spacing:0.02em;
+  transition:color 0.2s;
+}
+.proj-link:hover{color:#c73350;}
 .contact-box{
   background:#1c1c2e;border-radius:4px;padding:52px;text-align:center;
 }
@@ -264,12 +269,14 @@ footer p{font-size:12px;color:#555;}
         <div class="proj-name">IFUNDR</div>
         <div class="proj-stack">.NET 8 · Blazor Server</div>
         <p class="proj-desc">Company formation wizard with multi-jurisdiction support and a guided onboarding flow. Free tool aimed at startup founders in the CEE region.</p>
+         <a href="https://github.com/dragicapecik/IFoundr" target="_blank" class="proj-link">View on GitHub →</a>
       </div>
 
       <div class="proj-card reveal">
         <div class="proj-name">URLShortener / LSM Engine</div>
         <div class="proj-stack">.NET 8 · Svelte</div>
         <p class="proj-desc">URL shortening service with a hand-built LSM storage engine: WAL, MemTable, SSTables, compaction, global Bloom filter, and LRU cache. Base62 encoding.</p>
+        <a href="https://github.com/dragicapecik/UrlCleanerShortener" target="_blank" class="proj-link">View on GitHub →</a>
       </div>
 
     </div>
