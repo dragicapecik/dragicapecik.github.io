@@ -134,8 +134,9 @@ footer{
 }
 footer p{font-size:12px;color:#555;}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s,transform 0.5s;}
-.reveal.in{opacity:1;transform:none;}
+.reveal{opacity:1;transform:none;transition:opacity 0.5s,transform 0.5s;}
+.reveal.animate{opacity:0;transform:translateY(18px);}
+.reveal.animate.in{opacity:1;transform:none;}
 
 @media(max-width:680px){
   .nav-links a:not(.cv-btn){display:none;}
@@ -266,10 +267,11 @@ footer p{font-size:12px;color:#555;}
     <div class="proj-grid">
 
       <div class="proj-card reveal">
-        <div class="proj-name">IFUNDR</div>
+        <div class="proj-name">BUROSAFARI</div>
         <div class="proj-stack">.NET 8 · Blazor Server</div>
         <p class="proj-desc">Company formation wizard with multi-jurisdiction support and a guided onboarding flow. Free tool aimed at startup founders in the CEE region.</p>
-         <a href="https://github.com/dragicapecik/IFoundr" target="_blank" class="proj-link">View on GitHub →</a>
+        <a href="https://github.com/dragicapecik/IFoundr" target="_blank" class="proj-link">GitHub →</a>
+        <a href="https://patient-sunset-a9fa.dragicapecik.workers.dev/" target="_blank" class="proj-link" style="margin-left:14px;">Live site →</a>
       </div>
 
       <div class="proj-card reveal">
@@ -289,7 +291,7 @@ footer p{font-size:12px;color:#555;}
       <h2>Let's connect.</h2>
       <p>Open to conversations about interesting projects, collaborations, or just a good tech chat.</p>
       <div class="contact-links">
-        <a href="mailto:dragicapecik@gmail.com" class="primary">dragicapecik@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#97f3e5f6f0fef4f6e7f2f4fefcd7f0faf6fefbb9f4f8fa" class="primary"><span class="__cf_email__" data-cfemail="d2b6a0b3b5bbb1b3a2b7b1bbb992b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a>
         <a href="https://linkedin.com/in/dragicapecik" target="_blank" class="secondary">LinkedIn →</a>
         <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="secondary">↓ Resume PDF</a>
       </div>
@@ -301,17 +303,7 @@ footer p{font-size:12px;color:#555;}
   <p>Dragica Pecik · Zagreb · <span id="yr"></span></p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 const obs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => {
-    if(e.isIntersecting){
-      setTimeout(() => e.target.classList.add('in'), i * 70);
-      obs.unobserve(e.target);
-    }
-  });
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+  entries.forEach((e,i) =>
