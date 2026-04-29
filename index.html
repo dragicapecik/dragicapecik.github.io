@@ -3,8 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dragica Pecik</title>
+<title>Dragica Pecik — .NET Software Engineer | Zagreb</title>
+<meta name="description" content="Dragica Pecik is a software engineer in Zagreb with 10+ years in the .NET ecosystem. C#, Blazor Server, Azure DevOps, SQL. Building maintainable business applications.">
+<meta name="author" content="Dragica Pecik">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dragicapecik.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dragicapecik.github.io/">
+<meta property="og:title" content="Dragica Pecik — .NET Software Engineer">
+<meta property="og:description" content="Senior .NET engineer in Zagreb. C#, Blazor Server, Azure DevOps. A decade building business applications that are maintainable, reliable, and actually work.">
+<meta property="og:image" content="https://dragicapecik.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Dragica Pecik">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dragica Pecik — .NET Software Engineer">
+<meta name="twitter:description" content="Senior .NET engineer in Zagreb. C#, Blazor Server, Azure DevOps. A decade building business applications that are maintainable, reliable, and actually work.">
+<meta name="twitter:image" content="https://dragicapecik.github.io/og-image.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dragica Pecik",
+  "url": "https://dragicapecik.github.io",
+  "jobTitle": "Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "InfoDom Ltd."
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Zagreb",
+    "addressCountry": "HR"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/dragicapecik",
+    "https://github.com/dragicapecik"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Faculty of Electrical Engineering, Mechanical Engineering and Naval Architecture (FESB), Split"
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "MCSD App Builder" },
+    { "@type": "EducationalOccupationalCredential", "name": "MCSA Web Apps" },
+    { "@type": "EducationalOccupationalCredential", "name": "PCEP – Certified Entry-Level Python Programmer" }
+  ],
+  "knowsAbout": ["C#", ".NET 8", "Blazor Server", "Azure", "Azure DevOps", "SQL Server", "TypeScript", "AngularJS", "Angular", "Entity Framework", "Kotlin", "Jetpack Compose", "Supabase", "Python"]
+}
+</script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Source Sans 3',sans-serif;font-weight:300;color:#333;line-height:1.6;}
@@ -29,15 +83,47 @@ nav{
 .nav-links a.cv-btn{color:#e94560;border:1px solid #e94560;margin-left:8px;}
 .nav-links a.cv-btn:hover{background:#e94560;color:#fff;}
 
+/* ── Hero ── */
 .hero{
   background:#1c1c2e;
-  padding:118px 24px 72px;
+  padding:118px 24px 64px;
   text-align:center;
 }
 .hero-inner{max-width:680px;margin:0 auto;}
-.hero h1{font-size:52px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:10px;}
-.hero h2{font-size:20px;font-weight:300;color:#a0a0c0;margin-bottom:20px;letter-spacing:0.02em;}
-.hero p{font-size:16px;color:#8888a8;max-width:520px;margin:0 auto 32px;line-height:1.7;}
+.hero h1{font-size:52px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:8px;}
+.hero h2{font-size:20px;font-weight:300;color:#a0a0c0;margin-bottom:22px;letter-spacing:0.02em;}
+
+.hero-typed-prefix{
+  font-size:11px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:#e94560;margin-bottom:8px;
+}
+.hero-typed-word{
+  font-size:44px;font-weight:700;color:#fff;
+  min-height:1.2em;line-height:1.2;margin-bottom:24px;
+  letter-spacing:-0.01em;
+}
+#typed{color:#fff;}
+.cursor{
+  display:inline-block;color:#e94560;font-weight:300;
+  animation:blink 1s step-end infinite;margin-left:2px;
+  font-size:0.85em;vertical-align:middle;
+}
+@keyframes blink{50%{opacity:0;}}
+
+.hero-desc{font-size:16px;color:#8888a8;max-width:520px;margin:0 auto 26px;line-height:1.7;}
+
+.hero-socials{
+  display:flex;justify-content:center;gap:12px;margin-bottom:28px;
+}
+.hero-socials a{
+  display:flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.14);
+  color:#888;text-decoration:none;transition:all 0.2s;
+}
+.hero-socials a:hover{border-color:#e94560;color:#e94560;background:rgba(233,69,96,0.09);}
+.hero-socials svg{width:18px;height:18px;fill:currentColor;}
+
 .hero-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
 .btn-primary{
   background:#e94560;color:#fff;padding:12px 28px;
@@ -52,6 +138,43 @@ nav{
 }
 .btn-outline:hover{border-color:#aaa;color:#fff;}
 
+/* ── Logo strip ── */
+.logos-strip{
+  background:#161626;
+  padding:28px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.logos-inner{
+  max-width:960px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:0;flex-wrap:wrap;
+}
+.logos-group{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding:0 36px;
+}
+.logos-group:first-child{border-right:1px solid rgba(255,255,255,0.07);}
+.logos-label{
+  font-size:10px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:#444;
+}
+.logos-row{
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;
+}
+.logo-item{
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  opacity:0.4;filter:grayscale(1) brightness(2.5);
+  transition:opacity 0.25s,filter 0.25s;
+}
+.logo-item:hover{opacity:0.85;filter:grayscale(0) brightness(1);}
+.logo-item img{height:26px;width:auto;max-width:76px;object-fit:contain;}
+.logo-fallback{
+  display:none;font-size:12px;font-weight:700;
+  color:#777;letter-spacing:0.04em;
+}
+.logo-sub{font-size:10px;color:#444;letter-spacing:0.05em;}
+
+/* ── Content sections ── */
 section{padding:72px 24px;}
 .section-inner{max-width:960px;margin:0 auto;}
 section:nth-child(odd){background:#f8f8fb;}
@@ -65,7 +188,6 @@ h3.sec-title{
 
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
 .about-text p{font-size:15px;color:#555;line-height:1.75;margin-bottom:14px;}
-.skills-rows{}
 .skill-row{
   display:flex;gap:12px;padding:9px 0;
   border-bottom:1px solid #eee;font-size:14px;
@@ -80,7 +202,6 @@ h3.sec-title{
   padding:28px 0;border-bottom:1px solid #eee;
 }
 .exp-item:first-child{border-top:1px solid #eee;}
-.exp-meta{}
 .exp-date{font-size:12px;color:#999;letter-spacing:0.02em;line-height:1.5;}
 .exp-co{font-size:13px;font-weight:600;color:#444;margin-top:3px;}
 .exp-right h4{font-size:17px;font-weight:600;color:#1c1c2e;margin-bottom:2px;}
@@ -92,7 +213,7 @@ h3.sec-title{
 }
 .exp-bullets li::before{content:"–";position:absolute;left:0;color:#bbb;}
 
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:640px;margin:0 auto;}
 .proj-card{
   border:1px solid #e8e8f0;border-radius:4px;padding:28px;
   background:#fff;transition:border-color 0.2s,box-shadow 0.2s;
@@ -110,10 +231,11 @@ h3.sec-title{
 .proj-desc{font-size:14px;color:#666;font-weight:300;line-height:1.6;}
 .proj-link{
   display:inline-block;margin-top:16px;font-size:13px;font-weight:600;
-  color:#e94560;text-decoration:none;letter-spacing:0.02em;
-  transition:color 0.2s;
+  color:#e94560;text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;
 }
+.proj-link+.proj-link{margin-left:14px;}
 .proj-link:hover{color:#c73350;}
+
 .contact-box{
   background:#1c1c2e;border-radius:4px;padding:52px;text-align:center;
 }
@@ -129,21 +251,21 @@ h3.sec-title{
 .contact-links a.secondary{border:1px solid #444;color:#ccc;}
 .contact-links a.secondary:hover{border-color:#aaa;color:#fff;}
 
-footer{
-  background:#12121f;padding:22px 24px;text-align:center;
-}
+footer{background:#12121f;padding:22px 24px;text-align:center;}
 footer p{font-size:12px;color:#555;}
 
 .reveal{opacity:1;transform:none;transition:opacity 0.5s,transform 0.5s;}
 .reveal.animate{opacity:0;transform:translateY(18px);}
 .reveal.animate.in{opacity:1;transform:none;}
 
-@media(max-width:680px){
+@media(max-width:700px){
   .nav-links a:not(.cv-btn){display:none;}
   .hero h1{font-size:36px;}
   .about-grid,.exp-item,.proj-grid{grid-template-columns:1fr;}
   .exp-item{gap:6px;}
   .contact-box{padding:36px 20px;}
+  .logos-group{padding:16px 20px;}
+  .logos-group:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}
 }
 </style>
 </head>
@@ -157,7 +279,7 @@ footer p{font-size:12px;color:#555;}
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="cv-btn">↓ Resume</a>
+      <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="cv-btn">&#8595; Resume</a>
     </div>
   </div>
 </nav>
@@ -165,12 +287,73 @@ footer p{font-size:12px;color:#555;}
 <div class="hero">
   <div class="hero-inner">
     <h1>Dragica Pecik</h1>
-    <h2>software engineer · Zagreb</h2>
-    <p>Full-stack developer with a decade of experience in the .NET ecosystem. I build business applications that are maintainable, reliable, and actually work.</p>
+    <h2>Software Engineer &middot; Zagreb</h2>
+    <p class="hero-typed-prefix">My work is focused on</p>
+    <p class="hero-typed-word"><span id="typed"></span><span class="cursor" aria-hidden="true">|</span></p>
+    <p class="hero-desc">Full-stack .NET developer with a decade of experience building business applications that are maintainable, reliable, and actually work.</p>
+    <div class="hero-socials">
+      <a href="https://linkedin.com/in/dragicapecik" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/dragicapecik" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://www.credly.com/users/dragica-colak/badges" target="_blank" rel="noopener" aria-label="Credly badges">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12V11c0 4.52-3.13 8.74-7 9.93-3.87-1.19-7-5.41-7-9.93V6.3l7-3.12z"/></svg>
+      </a>
+    </div>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View projects</a>
       <a href="#contact" class="btn-outline">Get in touch</a>
     </div>
+  </div>
+</div>
+
+<div class="logos-strip" aria-label="Education and work experience">
+  <div class="logos-inner">
+
+    <div class="logos-group">
+      <p class="logos-label">Alumni</p>
+      <div class="logos-row">
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/fesb.unist.hr" alt="FESB Split"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="logo-fallback">FESB</span>
+          <span class="logo-sub">Split</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="logos-group">
+      <p class="logos-label">Experience at</p>
+      <div class="logos-row">
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/siemens.com" alt="Siemens"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="logo-fallback">Siemens</span>
+          <span class="logo-sub">Siemens</span>
+        </div>
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/proteron.hr" alt="Proteron Consulting"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="logo-fallback">Proteron</span>
+          <span class="logo-sub">Proteron</span>
+        </div>
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/king-ict.hr" alt="KING ICT"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="logo-fallback">KING ICT</span>
+          <span class="logo-sub">KING ICT</span>
+        </div>
+        <div class="logo-item">
+          <img src="https://logo.clearbit.com/infodom.hr" alt="InfoDom"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="logo-fallback">InfoDom</span>
+          <span class="logo-sub">InfoDom</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -180,15 +363,15 @@ footer p{font-size:12px;color:#555;}
     <div class="about-grid">
       <div class="about-text reveal">
         <p>I'm a software engineer at InfoDom in Zagreb, where I lead development of .NET/AngularJS web applications and own our Azure DevOps CI/CD pipelines. I care about the space between clean code and real user value.</p>
-        <p>Outside of work I build tools that solve problems I see in my professional environment — mostly around company formation, M&A workflows, and developer tooling.</p>
+        <p>Outside of work I build tools that solve problems I see in my professional environment — mostly around company formation, M&amp;A workflows, and developer tooling.</p>
         <p>M.Sc. in Electronics and Computer Engineering from FESB, Split.</p>
       </div>
       <div class="skills-rows reveal">
         <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-val">C#, SQL, Python, TypeScript</span></div>
         <div class="skill-row"><span class="skill-label">Frameworks</span><span class="skill-val">.NET 8, Blazor Server, AngularJS, Angular, EF</span></div>
         <div class="skill-row"><span class="skill-label">Cloud</span><span class="skill-val">Microsoft Azure, Azure DevOps</span></div>
-        <div class="skill-row"><span class="skill-label">Tools</span><span class="skill-val">Git, Visual Studio, ReSharper, Polly v8</span></div>
-        <div class="skill-row"><span class="skill-label">Certs</span><span class="skill-val">MCSD App Builder · MCSA Web Apps · PCEP</span></div>
+        <div class="skill-row"><span class="skill-label">Tools</span><span class="skill-val">Git, Visual Studio, ReSharper, Claude Code</span></div>
+        <div class="skill-row"><span class="skill-label">Certs</span><span class="skill-val">MCSD App Builder &middot; MCSA Web Apps &middot; PCEP</span></div>
       </div>
     </div>
   </div>
@@ -201,7 +384,7 @@ footer p{font-size:12px;color:#555;}
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">Jul 2019 – present</div>
+          <div class="exp-date">Jul 2019 &ndash; present</div>
           <div class="exp-co">InfoDom Ltd.</div>
         </div>
         <div class="exp-right">
@@ -209,7 +392,7 @@ footer p{font-size:12px;color:#555;}
           <div class="exp-sub">Zagreb</div>
           <ul class="exp-bullets">
             <li>Lead development of a production .NET / AngularJS web application serving core business workflows</li>
-            <li>Own Azure DevOps CI/CD pipelines — improved release reliability and cut deployment cycle time</li>
+            <li>Own Azure DevOps CI/CD pipelines &mdash; improved release reliability and cut deployment cycle time</li>
             <li>Write technical documentation; coordinate cross-team task planning and QA reporting</li>
           </ul>
         </div>
@@ -217,7 +400,7 @@ footer p{font-size:12px;color:#555;}
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">Jun 2018 – May 2019</div>
+          <div class="exp-date">Jun 2018 &ndash; May 2019</div>
           <div class="exp-co">KING ICT</div>
         </div>
         <div class="exp-right">
@@ -233,7 +416,7 @@ footer p{font-size:12px;color:#555;}
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">Sep 2015 – Jun 2018</div>
+          <div class="exp-date">Sep 2015 &ndash; Jun 2018</div>
           <div class="exp-co">Proteron Consulting</div>
         </div>
         <div class="exp-right">
@@ -248,7 +431,7 @@ footer p{font-size:12px;color:#555;}
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">May – Jul 2015</div>
+          <div class="exp-date">May &ndash; Jul 2015</div>
           <div class="exp-co">Siemens</div>
         </div>
         <div class="exp-right">
@@ -268,17 +451,23 @@ footer p{font-size:12px;color:#555;}
 
       <div class="proj-card reveal">
         <div class="proj-name">BUROSAFARI</div>
-        <div class="proj-stack">.NET 8 · Blazor Server</div>
+        <div class="proj-stack">.NET 8 &middot; Blazor Server</div>
         <p class="proj-desc">Company formation wizard with multi-jurisdiction support and a guided onboarding flow. Free tool aimed at startup founders in the CEE region.</p>
-        <!-- <a href="https://github.com/dragicapecik/BuroSafari" target="_blank" class="proj-link">GitHub →</a> -->
-        <a href="https://burosafari.dragicapecik.workers.dev/" target="_blank" class="proj-link" style="margin-left:14px;">Live site →</a>
+        <a href="https://burosafari.dragicapecik.workers.dev/" target="_blank" rel="noopener" class="proj-link">Live site &#8594;</a>
       </div>
 
       <div class="proj-card reveal">
         <div class="proj-name">URLShortener / LSM Engine</div>
-        <div class="proj-stack">.NET 8 · Svelte</div>
+        <div class="proj-stack">.NET 8 &middot; Svelte</div>
         <p class="proj-desc">URL shortening service with a hand-built LSM storage engine: WAL, MemTable, SSTables, compaction, global Bloom filter, and LRU cache. Base62 encoding.</p>
-        <a href="https://github.com/dragicapecik/UrlCleanerShortener" target="_blank" class="proj-link">View on GitHub →</a>
+        <a href="https://github.com/dragicapecik/UrlCleanerShortener" target="_blank" rel="noopener" class="proj-link">View on GitHub &#8594;</a>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-name">Hold My List</div>
+        <div class="proj-stack">Kotlin &middot; Jetpack Compose &middot; Supabase &middot; Room</div>
+        <p class="proj-desc">Collaborative shopping list app for Android. Create lists, add items with quantities and prices, share by email, and swipe items as you shop. Offline-first with Room local storage, real-time sync via Supabase, MVVM + Hilt.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.cognilab.holdmylist" target="_blank" rel="noopener" class="proj-link">Google Play &#8594;</a>
       </div>
 
     </div>
@@ -291,18 +480,53 @@ footer p{font-size:12px;color:#555;}
       <h2>Let's connect.</h2>
       <p>Open to conversations about interesting projects, collaborations, or just a good tech chat.</p>
       <div class="contact-links">
-        <a href="https://linkedin.com/in/dragicapecik" target="_blank" class="primary">LinkedIn →</a>
-        <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="secondary">↓ Resume PDF</a>
+        <a href="https://linkedin.com/in/dragicapecik" target="_blank" rel="noopener" class="primary">LinkedIn &#8594;</a>
+        <a href="dragicapecikresume.pdf" download="dragicapecikresume.pdf" class="secondary">&#8595; Resume PDF</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Dragica Pecik · Zagreb · <span id="yr"></span></p>
+  <p>Dragica Pecik &middot; Zagreb &middot; <span id="yr"></span></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+const typedWords = ['building', 'shipping', 'analyzing', 'solving'];
+let wordIdx = 0, charIdx = 0, isDeleting = false;
+const typedEl = document.getElementById('typed');
+function tick() {
+  const word = typedWords[wordIdx];
+  typedEl.textContent = isDeleting
+    ? word.substring(0, charIdx - 1)
+    : word.substring(0, charIdx + 1);
+  if (!isDeleting) charIdx++; else charIdx--;
+  let delay = isDeleting ? 75 : 140;
+  if (!isDeleting && charIdx === word.length) {
+    delay = 2600; isDeleting = true;
+  } else if (isDeleting && charIdx === 0) {
+    isDeleting = false;
+    wordIdx = (wordIdx + 1) % typedWords.length;
+    delay = 500;
+  }
+  setTimeout(tick, delay);
+}
+tick();
+
 const obs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) =>
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => {
+  el.classList.add('animate');
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
