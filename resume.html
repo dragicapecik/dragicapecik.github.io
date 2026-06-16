@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragica Pecik — Resume</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #1a1a1a;
+      max-width: 740px;
+      margin: 48px auto;
+      padding: 0 48px;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        padding: 11mm 14mm;
+        max-width: none;
+        font-size: 10.5pt;
+        line-height: 1.42;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      a {
+        color: inherit !important;
+        text-decoration: none;
+      }
+
+      section {
+        page-break-inside: avoid;
+        margin-bottom: 12px;
+      }
+
+      .summary { margin-bottom: 13px; line-height: 1.5; }
+      .entry { margin-bottom: 7px; }
+      .sec-title { margin-bottom: 7px; padding-bottom: 3px; }
+      .proj-entry { margin-bottom: 7px; }
+      .bullets li { margin-bottom: 1px; line-height: 1.42; }
+      .cert-list li { line-height: 1.5; }
+      .proj-link { display: none; }
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 5px;
+      color: #111;
+    }
+
+    .contact {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .summary {
+      font-size: 13px;
+      color: #111;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      font-weight: 400;
+      border-left: 2px solid #bbb;
+      padding-left: 12px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .sec-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #1a1a1a;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .entry {
+      margin-bottom: 11px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .entry-name {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #111;
+    }
+
+    .entry-role {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 12.5px;
+      color: #555;
+      margin-left: 5px;
+    }
+
+    .entry-date {
+      font-style: italic;
+      font-size: 12.5px;
+      color: #555;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .entry-sub {
+      font-style: italic;
+      font-size: 12.5px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bullets li {
+      padding-left: 16px;
+      position: relative;
+      font-size: 12.5px;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 2px;
+      font-weight: 300;
+    }
+
+    .bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #999;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 3px 12px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      font-size: 12.5px;
+      color: #111;
+      padding: 1.5px 0;
+    }
+
+    .skill-val {
+      font-size: 12.5px;
+      color: #333;
+      padding: 1.5px 0;
+      font-weight: 300;
+    }
+
+    .proj-entry {
+      margin-bottom: 11px;
+    }
+
+    .proj-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .proj-name {
+      font-weight: 700;
+      font-size: 13px;
+      color: #111;
+    }
+
+    .proj-stack {
+      font-size: 12px;
+      color: #555;
+      font-style: italic;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .proj-desc {
+      font-size: 12.5px;
+      color: #333;
+      font-weight: 300;
+      line-height: 1.55;
+      margin-top: 2px;
+    }
+
+    .proj-link {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 11.5px;
+      color: #666;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #ccc;
+      letter-spacing: 0.01em;
+    }
+
+    .proj-link:hover {
+      color: #111;
+      text-decoration-color: #666;
+    }
+
+    .cert-inline {
+      font-size: 12.5px;
+      color: #111;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="name">Dragica Pecik</p>
+  <p class="contact">
+    <a href="https://linkedin.com/in/dragicapecik">linkedin.com/in/dragicapecik</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/dragicapecik">github.com/dragicapecik</a>
+    &nbsp;&middot;&nbsp;
+    Zagreb, Croatia
+  </p>
+
+  <p class="summary">
+    Full-stack .NET engineer with 10+ years of experience building business-critical web applications.
+    Currently leading development at InfoDom; side projects span Android and web tooling.
+  </p>
+
+  <section>
+    <h2 class="sec-title">Certifications</h2>
+    <p class="cert-inline">MCSD: App Builder (2019) &nbsp;&middot;&nbsp; MCSA: Web Applications (2018) &nbsp;&middot;&nbsp; PCEP – Python Programmer (2024)</p>
+  </section>
+
+  <section>
+    <h2 class="sec-title">Work Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-name">InfoDom Ltd.<span class="entry-role">Software Engineer &middot; Zagreb</span></span>
+        <span class="entry-date">Jul 2019 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Lead development of a production .NET / AngularJS web application serving core business workflows</li>
+        <li>Own Azure DevOps CI/CD pipelines — improved release reliability and reduced deployment cycle time</li>
+        <li>Author technical documentation; coordinate cross-team task planning and QA reporting</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-name">KING ICT<span class="entry-role">Software Engineer &middot; Zagreb</span></span>
+        <span class="entry-date">Jun 2018 – May 2019</span>
+      </div>
+      <ul class="bullets">
+        <li>Migrated 30+ legacy projects from TFS to Git, refactoring namespaces with ReSharper across the full solution
+        </li>
+        <li>Updated SQL Server scripts and SSRS report queries to meet evolving business reporting requirements</li>
+        <li>Reconfigured all test deployments to a new environment with dynamic connectivity</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-name">Proteron Consulting<span class="entry-role">Software Engineer &middot; Zagreb</span></span>
+        <span class="entry-date">Sep 2015 – Jun 2018</span>
+      </div>
+      <ul class="bullets">
+        <li>Built and deployed .NET Azure web applications using Entity Framework, AngularJS, and Angular 4</li>
+        <li>Managed deployments and led client communications to ensure on-time, on-spec delivery</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-name">Siemens<span class="entry-role">Software Engineering Intern &middot; Split</span></span>
+        <span class="entry-date">May – Jul 2015</span>
+      </div>
+      <ul class="bullets">
+        <li>Master's academic dissertation project</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2 class="sec-title">Projects</h2>
+
+    <div class="proj-entry">
+      <div class="proj-header">
+        <span class="proj-name">BuroSafari</span>
+        <span class="proj-stack">.NET 8 &middot; Blazor Server</span>
+      </div>
+      <p class="proj-desc">
+        Company formation wizard with multi-jurisdiction support and a guided onboarding/recommendation flow.
+        Free tool targeting CEE startup founders.
+      </p>
+      <a href="https://burosafari.dragicapecik.workers.dev/" class="proj-link">↗ burosafari.dragicapecik.workers.dev</a>
+    </div>
+
+    <div class="proj-entry">
+      <div class="proj-header">
+        <span class="proj-name">Hold My List</span>
+        <span class="proj-stack">Kotlin &middot; Jetpack Compose &middot; Supabase &middot; Room</span>
+      </div>
+      <p class="proj-desc">
+        Collaborative Android shopping list app. Offline-first with Room local storage, real-time sync via Supabase,
+        MVVM + Hilt. Published on Google Play.
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.cognilab.holdmylist" class="proj-link">↗ Google Play — com.cognilab.holdmylist</a>
+    </div>
+
+  </section>
+
+  <section>
+    <h2 class="sec-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-val">C#, SQL, Python, TypeScript, Kotlin</span>
+
+      <span class="skill-label">Frameworks</span>
+      <span class="skill-val">.NET 8, Blazor Server, AngularJS, Angular, Entity Framework, Jetpack Compose</span>
+
+      <span class="skill-label">Cloud & DevOps</span>
+      <span class="skill-val">Microsoft Azure, Azure DevOps (CI/CD), Supabase, Git</span>
+
+      <span class="skill-label">Tools</span>
+      <span class="skill-val">Visual Studio, ReSharper, Claude Code</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title">Education</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-name">FESB – Faculty of Electrical Engineering, Mechanical Engineering &amp; Naval
+          Architecture</span>
+        <span class="entry-date">2010 – 2015</span>
+      </div>
+      <div class="entry-sub">M.Sc., Electronics and Computer Engineering &middot; B.Sc., Electrical Engineering and
+        Information Technology</div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
